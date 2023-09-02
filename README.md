@@ -18,9 +18,12 @@ Habilitado el entorno virtual se procede a la instalación de los paquetes "Djan
 
 y el paquete "psycopg2-binary" que se encarga de la comunicación con la base de datos
 
-Para tener un control de las normas sugeridas en la Guía de Estilos para el Código de Python, se trabaja con el paquete flake8 y se crea un archivo con el mismo nombre donde se agrega aquellos tipos de archivo que no se requiere corroborar. La ejecución se realiza junto con los test para verificar y corregir las líneas que no cumplen con la guía y tener un código ordenado y estandarizado.
+Para tener un control de las normas sugeridas en la Guía de Estilos para el Código de Python PEP 8, se trabaja con el paquete flake8 y se crea un archivo con el mismo nombre donde se agrega aquellos tipos de archivo que no se requiere corroborar. La ejecución se realiza junto con los test para verificar y corregir las líneas que no cumplen con la guía y tener un código ordenado y estandarizado.
 
 Respecto a las pruebas Unittest, cada aplicación cuenta con su carpeta y los archivos necesarios para realizar los tests. La metodología es que primero se realizan los tests y posteriormente se realiza el código. En ocaciones, y por falta de tiempo, primero se realizaba el código y después los tests o no se realizaban los tests y se procedia directamente a códificar.
+
+Para la ejecución de los test y verificación de estilos de Python PEP 8 se utiliza el siguiente comando:
+    * python3 manage.py test && flake8 .
 
 En el archivo "urls.py" se agregan las rutas para la visualización en la web del admin de Django y las rutas de API del proyecto.
 
@@ -31,6 +34,9 @@ El proyecto gira entorno a la aplicación "core", la cual se agrega al archivo s
 - El archivo admin.py el cual se configura para la visualización de la web de Django admin.
 - La carpeta migrations con los cambios realizados en el archivo models.py.
 - Una carpeta "test" que contiene los archivos test_admin.py, test_commands.py y test.models.py los cuales se encargan de probar el código de los archivos wait_for_db.py, admin.py y models.py.
+- Se ejecuta el makemigrations para verificar que esta por migrar.
+- Una vez realizadaLa ejecución de comandos para probar base de datos y la migración es:
+    * python3 manage.py wait_for_db && python3 manage.py migrate
 
 Las siguientes aplicaciones a instalar requieren de los paquetes djangorestframework y drf-spectacular.
 
